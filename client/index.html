@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <base href="/">
+    <title>Discover the top live music events</title>
+    <meta charset="utf-8">
+    <!-- <meta name="fragment" content="!"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1,
+    maximum-scale=1, minimum-scale=1, width=device-width">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i|Roboto:300,400,400i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="no-touch">
+        <nav class="navbar navbar-fixed-top margin-sm" role="navigation">
+            <div class="container-fluid margin-hz-fix">
+                <!-- <div class="navbar-header"> -->
+                        <a class="navbar-brand" href="#">
+                            <img src="/images/Logo.svg" alt="Aptaxle" />
+                        </a>
+                                <ul class="nav navbar-nav navbar-right lato light type-white _085 l-sp">
+                                      <li>
+                                          <a href="#" class="navbar-text">Browse</a>
+                                          <!-- <a href="/apparel" class="nav-text" ng-class="{'selected-nav' : selected==='apparel'}" ng-click="selected = 'apparel'">APPAREL</a> -->
+                                      </li>
+                                      <li>
+                                            <a href="#" class="navbar-text">Discover</a>
+                                       </li>
+                                      <li>
+                                            <a href="#" class="navbar-text">Add Event</a>
+                                      </li>
+                                    <li class="type-red ">
+                                        <a id="join" class="btn btn-default white strong navbar-text _095" href="#" role="button">Join Us</a>
+                                    </li>
+                        <!-- <button type="button" class="btn btn-default navbar-btn white red-type lato strong navbar-right">Join Us</button> -->
+                        </ul>
+            </div>
+        </nav>
+
+    <div ng-view></div>      
+
+    <div class="col-md-12 footer">
+        <div class="container-fluid">
+            <div class="row">
+                <ul class="nav navbar-nav navbar-left lato light type-gray _095">
+                        <li>
+                            <a href="#" class="navbar-text disabled">© 2015 Aptaxle</a>
+                            <!-- <a href="/apparel" class="nav-text" ng-class="{'selected-nav' : selected==='apparel'}" ng-click="selected = 'apparel'">APPAREL</a> -->
+                        </li>
+                        <li class="underline">
+                              <a href="#" class="navbar-text">Privacy Policy</a>
+                        </li>
+                        <li class="underline">
+                              <a href="#" class="navbar-text">Terms of Use</a>
+                        </li>
+                </ul>
+                        <ul class="nav navbar-nav navbar-right navbar-brand">
+                                <li>
+                                    <a href="#" class="navbar-brand" target="_blank">
+                                        <img src="/images/Facebook.svg"/>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="navbar-brand" target="_blank">
+                                        <img src="/images/Twitter.svg" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="navbar-brand" target="_blank">
+                                        <img src="/images/Google-Plus.svg" />
+                                    </a>
+                                </li>
+                        </ul>
+            </div>
+<!-- 
+            <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 navbar-right navbar-btn" style="display: in-line;">
+                        <a href="#" target="_blank">
+                            <img src="/images/Facebook.svg"/>
+                        </a>
+                        <a href="#" target="_blank">
+                            <img src="/images/Twitter.svg" class="margin-hz-sm"/>
+                        </a>
+                        <a href="#" target="_blank">
+                            <img src="/images/Google-Plus.svg" />
+                        </a>
+                    </div>
+                    <div class="col-md-8 col-sm-12 col-xs-12 pull-left">
+                            <p class="navbar-text lato type-gray light">
+                                    <span class="text-left margin-hz-sm">© 2015 Aptaxle</span>
+                                    <a href="#" class="navbar-link margin-hz-sm text-center" style="text-decoration: underline;">Privacy Policy</a>
+                                    <a href="#" class="navbar-link text-center" style="text-decoration: underline;">Terms of Use</a>
+                            </p>
+                    </div>
+            </div> -->
+        </div>
+    </div>
+    <!-- <nav class="navbar navbar-fixed-bottom" role="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 pull-right">
+                    <img src="/images/Facebook.svg" class="center-block"/>
+                    <img src="/images/Twitter.svg" />
+                    <img src="/images/Google-Plus.svg" />
+                </div>
+            </div>
+        </div>
+    </nav> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-resource.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-touch.js"></script> -->
+    <script src="app.js"></script>
+    <script src="controllers.js"></script>
+
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>    

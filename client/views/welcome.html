@@ -1,0 +1,87 @@
+<div id="landing-page" class="overlay jumbotron jumbotron-fluid">
+    <!-- <div class="container-fluid"> -->
+    <div class="container type-white margin-lg">
+        <h1 class="text-center lato light">Amazing performances near you</h1>
+        <p class="text-center lato light">Discover the top live music events in the Southeast</p>
+    </div>
+    <div class="container">
+        <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 form-group lato">
+            <form>
+                <div class="row form-marker">
+                    <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                        <input type="text" class="form-control type-f-gray input-fix light _095" placeholder="Enter your favorite artist or genre">
+                    </div>
+                </div>
+                <div class="row form-marker">
+                    <div class="col-md-4 col-sm-6 form-group btn-group type-f-gray text-left">
+                        <button id="location" class="btn btn-lg white dropdown-toggle form-control border-fix light _1 l-sp-02" data-toggle="dropdown" href="#" type="button" aria-haspopup="true" aria-expanded="false">
+                                    Location <span class="glyphicon glyphicon-menu-down type-green _075"></span>
+                        </button>
+                                  <!-- <ul class="dropdown-menu"> -->
+                        <!-- <a id="location" class="btn btn-lg white dropdown-toggle form-control border-fix light _1 l-sp-02" data-toggle="dropdown" href="#">Location&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-menu-down type-green _075"></span></a> -->
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Atlanta, GA</a></li>
+                            <li><a href="#">Birmingham, AL</a></li>
+                            <li><a href="#">Charlotte, NC</a></li>
+                            <li><a href="#">Chattanooga, TN</a></li>
+                            <li><a href="#">Nashville, TN</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-sm-6 form-group btn-group type-f-gray">
+                        <a id="budget" class="btn white dropdown-toggle form-control border-fix text-left l-sp-02" data-toggle="dropdown" href="#">Budget <span class="glyphicon glyphicon-menu-down type-green _075"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">$0 - 25</a></li>
+                                <li><a href="#">$0 - 60</a></li>
+                                <li><a href="#">$0 - 90</a></li>
+                                <li><a href="#">$0 - 120</a></li>
+                                <li><a href="#">$0 - 200</a></li>
+                            </ul>
+                        </div>
+                    <div class="col-md-4 col-sm-12 form-group">
+                        <input type="submit" class="form-control btn btn-block green type-white strong input-fix-b" value="Find events">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- GAP GAP GAP GAP GAP GAP GAP -->
+    <div class="margin-lg"></div>
+
+<!-- POPULATING SECTION -->
+
+<div class="container center-block" ng-controller="EventsPopulation">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 tile-event" ng-repeat="event in events">
+        <div class="row">
+            <!-- <div ng-style="{'background-image':'url(' + event.image + ')'}" style="height: 260px; width: 343px; background-size: cover;" class="img-responsive center-block"> -->
+            <img ng-src="{{ event.image }}" class="img-responsive center-block border-fix" />
+        </div>
+        <div class="row text-left type-gray type-cap _075 lato margin-top-md">
+            <p>{{event.genre}}</p>
+        </div>
+        <div class="row text-left type-red _125 roboto">
+            {{ event.artist }}
+        </div>
+        <div class="row" id="event-info">
+            <div class="col-lg-6 col-md-6 col-sm-6 border-right lato padding-t-r">
+                <div class="row type-gray type-cap _085 text-right">
+                    <small>LOCATION</small>
+                </div>
+                <div class="row type-d-gray _1125 light text-right">
+                    <p>{{ event.location }}</p>
+                </div>              
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 border-left lato padding-t-l">
+                <div class="row type-gray type-cap _085 text-left">
+                    <small>PRICE</small>
+                </div>
+                <div class="row type-d-gray _1125 light text-left">
+                    <p>{{ event.price }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid margin-lg">
+    <button type="button" id="expand" class="btn btn-default white type-green lato strong">Discover more</button>
+</div>

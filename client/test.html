@@ -1,0 +1,270 @@
+
+Code:
+<html>
+<head>
+
+<title>Database</title>
+  <link rel="shortcut icon" href="db.ico" />
+
+  
+   <link rel="stylesheet" type="text/css" href="database.css" >
+   
+<script type="text/javascript">
+///////////////////////////////////////
+
+</script>
+  </head>
+  
+<body >
+
+
+<div class="three">
+	 <p align="middle"> 
+     <font size="17,17" color="BLACK">
+     <b> DATABASE </b> 
+     </font>
+     </p>  
+ </div> 
+ 
+<DIV class="one" >   
+<DIV class="two" >   
+
+<form>
+
+<div class="seven">
+	 <p align="middle"> 
+     <font size="6" color="BLACK">
+     <b> First Name </b> 
+     </font>
+     </p>  
+ </div> 
+ 
+ <div class="eight">
+	 <p align="middle"> 
+     <font size="6" color="BLACK">
+     <b> Last Name </b> 
+     </font>
+     </p>  
+ </div> 
+ 
+ <div class="nine">
+	 <p align="middle"> 
+     <font size="6" color="BLACK">
+     <b> Birthplace </b> 
+     </font>
+     </p>  
+ </div> 
+ 
+ <div class="eleven">
+	 <p align="middle"> 
+     <font size="6" color="BLACK">
+     <b> UserID </b> 
+     </font>
+     </p>  
+ </div> 
+ 
+<form>
+ 
+<input class="four" type="text"  name="firstname"><br>
+<input class="five" type="text" name="lastname"><br>
+<input class="six" type="text" name="birthplace"><br>
+<input class="ten" type="text" name="ID"><br>
+
+</form>
+
+   <div id="footer">
+<p>Sort records
+</p>
+   
+   <div class="remove_1">
+   
+   <ul id="footer_remove"> 
+	<img src="http://i.imgur.com/YMI6xmo.png" >
+	<div id="footer_mini" >
+	<div class="rtc">
+	<p onclick="remove()"> Remove this record </p>
+	</div>
+	
+	<div class="rac">
+	<p onclick="remove(true)"> Remove all records </p>
+	</div>
+</div>
+
+	</ul>
+	
+	</div>
+	
+	<ul id="footer_save">
+	<img src="http://i.imgur.com/LIVMTUZ.png" onclick="save()" >
+	</ul>
+	
+	
+	<ul  id="footer_next">
+
+	<img type="button" class="footer_next" src="http://i.imgur.com/ZZhJWpK.png" onclick="next()" >
+	</ul>
+	<ul  id="footer_new">
+
+	<img type="button" class="footer_new" src="http://i.imgur.com/sSizCRs.png" onclick="" >
+	</ul>
+	
+	<ul  id="footer_prev">
+
+	<img type="button" class="footer_prev" src="http://i.imgur.com/NnBXblZ.png" onclick="prev()" >
+	</ul>
+	
+	<ul  id="footer_show">
+
+	<img type="button" class="footer_show" src="http://i.imgur.com/wr0iJaW.png" onclick="remove()" >
+	</ul>
+	
+	
+		
+   </div>
+   
+
+<script>
+
+
+data=JSON.parse(localStorage.mydb || "0") || {
+	"1": {
+		"name": "John",
+		"last": "Smith",
+		"birth": "Seattle, WA",
+		"id": 1
+	},
+	"2": {
+		"name": "Kelly",
+		"last": "Ross",
+		"birth": "Dallas, TX",
+		"id": 2
+	},
+	"3": {
+		"name": "Jeff",
+		"last": "Stevenson",
+		"birth": "Washington, D.C.",
+		"id": 3
+	},
+	"4": {
+		"name": "Jennifer",
+		"last": "Gill",
+		"birth": "Seattle, WA",
+		"id": 4
+	},
+	"5": {
+		"name": "Bob",
+		"last": "Jones",
+		"birth": "St. Louis, MO",
+		"id": 5
+	},
+	"6": {
+		"name": "Jane",
+		"last": "Clinton",
+		"birth": "New York, NY",
+		"id": 6
+	},
+	"7": {
+		"name": "John",
+		"last": "Roberts",
+		"birth": "Oakland, CA",
+		"id": 7
+	},
+	"8": {
+		"name": "Sally",
+		"last": "Freer",
+		"birth": "Chicago, IL",
+		"id": 8
+	},
+	"9": {
+		"name": "Sam",
+		"last": "Sandburg",
+		"birth": "Miami, FL",
+		"id": 9
+	},
+	"10": {
+		"name": "Ross",
+		"last": "Edwards",
+		"birth": "Atlanta, GA",
+		"id": 10
+	}
+};
+
+index=0;
+
+
+
+function byName(name){return document.getElementsByName(name)[0];}
+
+function save(blnSilent){
+  var branch={
+    name: byName("firstname").value,
+    last: byName("lastname").value,
+    birth: byName("birthplace").value,
+    id: byName("ID").value
+  }
+ 
+   if(!blnSilent){
+    data[branch.ID]=branch;
+  }
+
+   render();
+   localStorage.mydb=  JSON.stringify(data);
+  
+}
+
+
+
+function draw(id){
+  var that=data[id];
+  if(!that) throw "not a valid ID: "+ id;
+  byName("firstname").value= that.name;
+  byName("lastname").value= that.last;
+  byName("birthplace").value= that.birth;
+  byName("ID").value= that.id;
+  render();
+
+}
+
+function render(){
+    document.title= "Viewing #"+index+" of " + Object.keys(data).length;
+}
+
+
+function next(){
+   index++;
+   var r=Object.keys(data),
+   that=data[r[index]];
+    if(!that){return;}
+   draw(that.id);
+}
+
+
+
+function prev(){
+   index--;
+   var r=Object.keys(data),
+   that=data[r[index]];
+    if(!that){return;}
+   draw(that.id);
+   
+}
+
+
+
+
+
+function remove(all){
+  if(all===true){data={}; save(true); }
+  delete data[r[index]];
+  save(true);
+  render();
+}
+
+
+render();
+
+
+</script>
+   
+</body>
+</html>
