@@ -59,13 +59,13 @@ a:visited, a:link, a:active {
     text-decoration: underline;
 }
 .jumbotron h1 {
-    font-size: 5em;
+    font-size: 4em;
     font-weight: 300;
     letter-spacing: 1px;
     text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.3);
 }
 .jumbotron p {
-    font-size: 2.25em;
+    font-size: 2em;
     font-weight: 300;
     letter-spacing: 1px;
     text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.3);
@@ -114,6 +114,15 @@ a:visited, a:link, a:active {
     border-top: 1px solid rgba(179, 181, 190, 0.4);
     /* border-left: 1px solid rgba(179, 181, 190, 0.4); */
 }
+.input-removal {
+    border: 1px solid #fff;
+    -webkit-box-shadow: transparent;
+    box-shadow: transparent;
+    -webkit-transition: none;
+    -o-transition: none;;
+    transition: none;
+}
+
 /* --- LAYOUT --- LAYOUT --- LAYOUT --- LAYOUT --- */
 .no-padding {
     padding-right: 0px;
@@ -143,6 +152,15 @@ a:visited, a:link, a:active {
 .margin {
     margin: 1% 1%;
 }
+.margin-bottom-neg {
+    margin-bottom: -10%;
+}
+.margin-bottom-xl {
+    margin-bottom: 10%;
+}
+.margin-top-neg {
+    margin-top: -10%;
+}
 .margin-top-sm {
     margin-top: 1%;
 }
@@ -152,9 +170,27 @@ a:visited, a:link, a:active {
 .margin-top-lg {
     margin-top: 5%;
 }
+.margin-top-xl {
+    margin-top: 7.5%;
+}
 .margin-hz-fix {
     margin-right: 2%;
     margin-left: 1%;
+}
+@media (max-width: 600px) {
+    .margin-hz-fix {
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .navbar-toggle {
+        margin-right: 0;
+        margin-top: 0;
+        margin-left: -8px;
+    }
+    ul > li {
+        float: left;
+        margin-left: 1.85em;
+    }
 }
 .margin-hz-sm {
     margin-right: 1%;
@@ -176,6 +212,18 @@ a:visited, a:link, a:active {
     padding-left: 8%;
 }
 /* ---  BUILDS --- BUILDS --- BUILDS --- BUILDS */
+.header {
+    top: 0;
+    right: 0;
+    left: 0;
+    border-width: 0 0 1px;
+    padding: 0px;
+    position: absolute;
+}
+.form-group {
+    margin-bottom: 5px;
+    padding: 5px;
+}
 /* .form-marker>.col-md-4,form-marker>.col-sm-6,form-marker>.col-md-12,form-marker>.col-sm-12,form-marker>.col-xs-12 {
     padding-right: 10px;
     padding-left: 10px;
@@ -215,7 +263,11 @@ a:visited, a:link, a:active {
     padding: 15px 0px;
 }
 .navbar-nav>li>a {
-    line-height: 17.5px;
+    line-height: 1.06em;
+}
+
+.navbar-brand {
+    float: none;
 }
 .bar-green-1 {
     /* text-decoration: underline !important; */
@@ -272,55 +324,23 @@ a:visited, a:link, a:active {
 .border-fix {
     border-radius: 3px;
 }
-/* .hero-img {
-    background-image: url('/images/Hero.png');
-    height: 50%; */
-    /* height: 50%; */
-    /* width: 100%; */
-    /* background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative; */
-    /* border-radius: 0px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size:cover;
-    background-attachment: fixed;
-} */
-.hero-text {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
+.nav>li>a>img {
+    max-width: 75%;
 }
 div #landing-page {
     background-image: url('/images/Background.jpg');
     background-size: cover;
+    background-position: center;
     height: 100%;
     /* z-index: -1; */
 }
-.bgimage {
-    width:100%;
-    height:500px;
-    background: url('/images/Hero.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size:cover;
-    background-attachment: fixed;
-  }
-  .bgimage h5 {
-    color:white;
-    text-shadow:2px 2px #333;
-  }
-  .overlay{
+.overlay{
       background: url('/images/Overlay.svg');
       /* z-index: 1001; */
     /* position:relative; */
     /* display:inline-block; */
-  }
-  /* .overlay:after {
+}
+/* .overlay:after {
     content:'';
     position:absolute;
     left:0; top:0;
@@ -334,7 +354,24 @@ div #landing-page {
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );  */
     /* IE6-9 */
-  /* } */
+/* } */
 
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,1+100 */
 
+/* MEDIA MEDIA MEDIA */
+/* @media (min-width: 768px){
+.nav-tabs.nav-justified > li {
+    float: none;
+    }
+} */
+@media (min-width: 600px) and (max-width: 768px) {
+    ul > li {
+        float: left;
+        margin-left: 2.5em;
+        /* display: inline; */
+    }
+    #logo {
+        height: auto;
+        width: 5rem;
+    }
+}

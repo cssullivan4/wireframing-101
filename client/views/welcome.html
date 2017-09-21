@@ -1,5 +1,4 @@
 <div id="landing-page" class="overlay jumbotron jumbotron-fluid">
-    <!-- <div class="container-fluid"> -->
     <div class="container type-white margin-lg">
         <h1 class="text-center lato light">Amazing performances near you</h1>
         <p class="text-center lato light">Discover the top live music events in the Southeast</p>
@@ -9,18 +8,19 @@
             <form>
                 <div class="row form-marker">
                     <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                        <input type="text" class="form-control type-f-gray input-fix light _095" placeholder="Enter your favorite artist or genre">
+                        <input type="text" class="form-control input-removal type-f-gray input-fix light _095" placeholder="Enter your favorite artist or genre">
                     </div>
                 </div>
                 <div class="row form-marker text-left">
-                    <div class="col-md-4 col-sm-6 form-group btn-group type-f-gray text-left">
-                        <button id="location" class="btn btn-md white dropdown-toggle form-control border-fix light _1 l-sp-02" data-toggle="dropdown"
-                            href="#" type="button" aria-haspopup="true" aria-expanded="false">
-                                    Location <span class="glyphicon glyphicon-menu-down type-green _075"></span>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 form-group btn-group">
+                        <button id="location" class="btn btn-md type-f-gray text-left white dropdown-toggle form-control border-fix light _1 l-sp-02 input-removal"
+                            data-toggle="dropdown" href="#" type="button" aria-haspopup="true" aria-expanded="false">
+                                    Location
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="glyphicon glyphicon-menu-down type-green _075"></span>
                         </button>
-                        <!-- <ul class="dropdown-menu"> -->
-                        <!-- <a id="location" class="btn btn-lg white dropdown-toggle form-control border-fix light _1 l-sp-02" data-toggle="dropdown" href="#">Location&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-menu-down type-green _075"></span></a> -->
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu input-removal border-fix lato _1 type-f-gray" style="left: 14px">
                             <li><a href="#">Atlanta, GA</a></li>
                             <li><a href="#">Birmingham, AL</a></li>
                             <li><a href="#">Charlotte, NC</a></li>
@@ -28,9 +28,14 @@
                             <li><a href="#">Nashville, TN</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-4 col-sm-6 form-group btn-group type-f-gray">
-                        <a id="budget" class="btn white dropdown-toggle form-control border-fix text-left l-sp-02" data-toggle="dropdown" href="#">Budget <span class="glyphicon glyphicon-menu-down type-green _075"></span></a>
-                        <ul class="dropdown-menu">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 form-group btn-group type-f-gray">
+                        <!-- <input> -->
+                        <a id="budget" class="btn white dropdown-toggle form-control border-fix text-left light _1 l-sp-02" data-toggle="dropdown"
+                            href="#">Budget
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span class="glyphicon glyphicon-menu-down type-green _075"></span></a>
+                        <ul class="dropdown-menu input-removal border-fix lato _1 type-f-gray light" style="left: 14px">
                             <li><a href="#">$0 - 25</a></li>
                             <li><a href="#">$0 - 60</a></li>
                             <li><a href="#">$0 - 90</a></li>
@@ -39,7 +44,7 @@
                         </ul>
                     </div>
                     <div class="col-md-4 col-sm-12 form-group">
-                        <input type="submit" class="form-control btn btn-block green type-white strong input-fix-b" value="Find events">
+                        <input type="submit" class="form-control btn btn-block green type-white strong input-fix-b border-fix" value="Find events">
                     </div>
                 </div>
             </form>
@@ -47,14 +52,13 @@
     </div>
 </div>
 <!-- GAP GAP GAP GAP GAP GAP GAP -->
-<div class="margin-lg"></div>
+<div class="margin-sm"></div>
 <!-- NAV NAV NAV NAV NAV -->
 <div class="container">
     <nav class="navbar" role="navigation">
         <ul class="nav navbar-nav lato type-d-gray _095 l-s-02">
             <li>
                 <a href="#" class="navbar-text bar-green">Most popular</a>
-                <!-- <span class="active"></span> -->
             </li>
             <li>
                 <a href="#" class="navbar-text bar-green">Coming up</a>
@@ -67,21 +71,20 @@
 </div>
 <!-- POPULATING SECTION -->
 
-<div class="container center-block" ng-controller="EventsPopulation">
+<div class="container center-block margin-bottom-neg" ng-controller="EventsPopulation">
     <a href="#">
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 tile-event" ng-repeat="event in events">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 tile-event margin-bottom-xl" ng-repeat="event in events">
             <div class="row">
-                <!-- <div ng-style="{'background-image':'url(' + event.image + ')'}" style="height: 260px; width: 343px; background-size: cover;" class="img-responsive center-block"> -->
                 <img ng-src="{{ event.image }}" class="img-responsive center-block border-fix" />
             </div>
             <div class="row text-left type-gray type-cap _075 lato margin-top-md">
                 <p>{{event.genre}}</p>
             </div>
             <div class="row text-left type-red _125 roboto">
-                {{ event.artist }}
+                <p>{{ event.artist }}</p>
             </div>
             <div class="row" id="event-info">
-                <div class="col-lg-6 col-md-6 col-sm-6 border-right lato padding-t-r">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 border-right lato padding-t-r">
                     <div class="row type-gray type-cap _085 text-right">
                         <small>LOCATION</small>
                     </div>
@@ -89,7 +92,7 @@
                         <p>{{ event.location }}</p>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 border-left lato padding-t-l">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 border-left lato padding-t-l">
                     <div class="row type-gray type-cap _085 text-left">
                         <small>PRICE</small>
                     </div>
